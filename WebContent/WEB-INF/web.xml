@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>travelling</display-name>
+  
+  <servlet>
+    <servlet-name>s1</servlet-name>
+    <servlet-class>controller.AddBlog</servlet-class>
+    <multipart-config>
+      <max-file-size>10485760</max-file-size>
+      <max-request-size>20971520</max-request-size>
+      <file-size-threshold>5242880</file-size-threshold>
+    </multipart-config>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>s1</servlet-name>
+    <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  
+  
+ 
+    <servlet-name>s2</servlet-name>
+    <servlet-class>controller.Editblog</servlet-class>
+    <multipart-config>
+      <max-file-size>10485760</max-file-size>
+      <max-request-size>20971520</max-request-size>
+      <file-size-threshold>5242880</file-size-threshold>
+    </multipart-config>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>s2</servlet-name>
+    <url-pattern>/update</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet>
+        <servlet-name>addimages</servlet-name>
+        <servlet-class>controller.addImages</servlet-class>
+     <multipart-config>
+      <max-file-size>10485760</max-file-size>
+      <max-request-size>20971520</max-request-size>
+      <file-size-threshold>5242880</file-size-threshold>
+    </multipart-config>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addimages</servlet-name>
+        <url-pattern>/images</url-pattern>
+    </servlet-mapping>
+ 
+  
+</web-app>

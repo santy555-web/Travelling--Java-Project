@@ -1,0 +1,94 @@
+
+conn sys/sys as sysdba;
+create user admin identified by str654321;
+grant all privileges to admin;
+conn admin/str654321;
+
+
+
+**Register
+
+create table register(
+name varchar(50),
+gmail varchar(100),
+password varchar(100),
+Re_enterpassword varchar(100)
+);
+
+**blog table(main table)
+
+create table blog (
+bid number,
+name varchar(60),
+country varchar(60),
+description varchar2(4000),
+image blob,
+cid number,
+dates date default sysdate
+);
+
+alter table blog add constraint ct_01 primary key(cid);
+
+create sequence blog_seq
+increment by 1
+start with 1;
+
+
+create table category
+ (cid number,
+  name varchar(100));
+
+
+insert into category values(1,'Small Group tours');
+insert into category values(2,'City break tours');
+insert into category values(3,'Private tours');
+insert into category values(4,'Family tours');
+insert into category values(5,'Overland tours');
+
+
+create table offer(
+oid number,
+tourname varchar(100),
+location varchar(50),
+days number,
+start_date varchar(20),
+price number
+); 
+
+create sequence offer_seq
+increment by 1
+start with 1;
+
+
+create table book(
+bid number,
+uname varchar(100),
+gmail varchar(100),
+tname varchar(100),
+locations varchar(50),
+days number,
+dates varchar(20),
+price number,
+noofperson number,
+cid number
+); 
+
+
+
+create sequence book_seq
+increment by 1
+start with 1;
+
+
+create table addimage(
+imd number,
+image blob
+);
+
+
+create sequence image_seq
+increment by 1
+start with 1;
+
+
+
